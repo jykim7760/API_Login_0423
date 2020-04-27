@@ -16,13 +16,15 @@ class ConnectUtil {
     companion object{
 //        어느서버(호스트) 로 가야하는 지 적는 변수
 //        도메인 or IP주소  _ 메인 주소 저장
-        val BASE_URL = "http://192.168.0.243:5000"
+        val BASE_URL = "http://192.168.10.224:5000"
 
 //         필요한변수넣기
 //        화면에서 서버로 전달하는 데이터
         fun postRequestLogin(context: Context, id : String, pw : String, handler: JsonResponseHandler?){
             val client = OkHttpClient()
-//    어떤 기능을 수행하러 가는지 주소 완성 ex ) http://192.168.0.243:5000/auth
+//    어떤 기능을 수행하러 가는지 주소 완성 ex ) http://192.168.10.243:5000/auth
+//
+
             val url = "${BASE_URL}/auth"
 //    서버에들고갈데이터 _ 첨부
             val formBody = FormBody.Builder()
@@ -35,7 +37,7 @@ class ConnectUtil {
         .post(formBody)
 //        .header = api 가 헤더를 요구하면 추가해야함
         .build()
-
+// 스타트액티비티처럼 실제로 요청을 날리는 코드
     client.newCall(request).enqueue(object : Callback{
         override fun onFailure(call: Call, e: IOException) {
             e.printStackTrace() //연결실패한경위 로그로 출력
