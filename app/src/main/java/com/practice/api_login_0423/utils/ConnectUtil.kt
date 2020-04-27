@@ -1,13 +1,11 @@
 package com.practice.api_login_0423.utils
 
 import android.content.Context
-import com.practice.api_login_0423.BaseActivity
-import com.practice.api_login_0423.MainActivity
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 
-class ConnectUtil
+class ConnectUtil{
 
 
     // 응답내용을 액티비티로 넘겨주기 위한 인터페이스
