@@ -1,11 +1,13 @@
 package com.practice.api_login_0423.utils
 
 import android.content.Context
+import com.practice.api_login_0423.BaseActivity
+import com.practice.api_login_0423.MainActivity
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 
-class ConnectUtil {
+class ConnectUtil
 
 
     // 응답내용을 액티비티로 넘겨주기 위한 인터페이스
@@ -16,7 +18,7 @@ class ConnectUtil {
     companion object{
 //        어느서버(호스트) 로 가야하는 지 적는 변수
 //        도메인 or IP주소  _ 메인 주소 저장
-        val BASE_URL = "http://192.168.10.224:5000"
+        val BASE_URL = "http://192.168.0.243:5000"
 
 //         필요한변수넣기
 //        화면에서 서버로 전달하는 데이터
