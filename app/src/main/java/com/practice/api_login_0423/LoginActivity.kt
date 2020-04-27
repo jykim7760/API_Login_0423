@@ -1,5 +1,6 @@
 package com.practice.api_login_0423
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.practice.api_login_0423.utils.ConnectUtil
@@ -34,6 +35,16 @@ class LoginActivity : BaseActivity() {
 
                     if (code == 200){
 //                        로그인성공
+
+                        val data = json.getJSONObject("data")
+                        val user = data.getJSONObject("user")
+                        val name = user.getString("name")
+
+
+                        val myIntent = Intent(mContext, MainActivity::class.java)
+                        myIntent.putExtra("username", name)
+                        startActivity(myIntent)
+
                     }
                     else{
                         val message = json.getString("message")
